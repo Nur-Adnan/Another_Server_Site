@@ -34,7 +34,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 async function run() {
     try {
         await client.connect();
-        const carCollection = client.db('laptopShop').collection('service')
+        const carCollection = client.db('CarHouse').collection('service')
 
         app.get('/service', async (req, res) => {
             const query = {};
@@ -109,7 +109,7 @@ run().catch(console.dir);
 
 //To check is it working
 app.get('/', (req, res) => {
-    res.send('Running Server CarShop');
+    res.send('Running Server CarHouse');
 });
 
 //listen
